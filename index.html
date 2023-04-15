@@ -1,0 +1,9 @@
+<button onclick="copyToClipboard()">複製</button>
+
+<script>
+function copyToClipboard() {
+  var copyText = "0992";
+  navigator.clipboard.writeText(copyText);
+  alert("已複製: " + copyText);
+}
+</script>
