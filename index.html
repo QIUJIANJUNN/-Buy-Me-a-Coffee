@@ -5,18 +5,12 @@
     <title>謝謝你請我喝咖啡☕️ ❤️ 😊</title>
     <style>
       body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-
-      .container {
+        background-color: #C4C4C4;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        background-color: #E3E3E3;
+        margin-top: 100px;
       }
 
       h1 {
@@ -66,23 +60,21 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="button-container">
-        <p>凱基銀行代碼：809</p>
-        <button onclick="copyToClipboard('809')">複製銀行代碼</button>
-      </div>
-  
-      <div class="button-container">
-        <p>帳戶：60328000001789</p>
-        <button onclick="copyToClipboard('60328000001789')">複製帳戶</button>
-      </div>
-  
-      <div class="image-wrapper">
-        <img src="coffee.jpeg" alt="Your Image" class="round-image">
-      </div>
-      <h1>謝謝你請我喝咖啡 ☕️ ❤️ 😊</h1>
-      <h2>@Nami.kk00</h2>
+    <div class="button-container">
+      <p>凱基銀行代碼：809</p>
+      <button onclick="copyToClipboard('809')">複製銀行代碼</button>
     </div>
+
+    <div class="button-container">
+      <p>帳戶：60328000001789</p>
+      <button onclick="copyToClipboard('60328000001789')">複製帳戶</button>
+    </div>
+
+    <div class="image-wrapper">
+      <img src="coffee.jpeg" alt="Your Image" class="round-image">
+    </div>
+    <h1>謝謝你請我喝咖啡 ☕️ ❤️ 😊</h1>
+    <h2>@Nami.kk00</h2>
 
     <script>
       function copyToClipboard(text) {
