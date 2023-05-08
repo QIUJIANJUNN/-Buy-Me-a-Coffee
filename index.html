@@ -1,93 +1,86 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-Hant">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>謝謝你請我喝咖啡☕️ ❤️ 😊</title>
     <style>
-      body {
-        background-color: #C4C4C4;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 100px;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
 
-      h1 {
-        text-align: center;
-        font-size: 50px;
-        margin: 30px;
-      }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
 
-      h2 {
-        text-align: center;
-        font-size: 40px;
-        margin: 0px;
-      }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            background-color: #0074d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 80%;
+            max-width: 285px;
+        }
 
-      p, button {
-        font-size: 30px;
-      }
-      
-      p {
-        text-decoration: none;
-        color: inherit;
-      }
+        button:hover {
+            background-color: #2e4482;
+        }
 
-      .button-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .button-container button {
-        margin-left: 20px;
-      }
-      
-      .image-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 30px;
-      }
-
-      .round-image {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-
+        @media (min-width: 285px) {
+            button {
+                width: 80%;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <div class="button-container">
-      <p>凱基銀行代碼：809</p>
-      <button onclick="copyToClipboard('809')">複製銀行代碼</button>
-    </div>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function () {
+                alert("已複製");
+            }, function (err) {
+                console.error("無法複製: ", err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>銀行轉帳</h2>
+    <button onclick="copyToClipboard('809')">凱基銀行代碼：809</button>
+    <button onclick="copyToClipboard('60328000001789')">帳戶：60328000001789</button>
+    <h2>行動支付</h2>
+    <script async
+    src="https://js.stripe.com/v3/buy-button.js">
+    </script>
+    <stripe-buy-button
+    buy-button-id="buy_btn_1N5LzhLT4wCyvoHaqTSfcwUQ"
+    publishable-key="pk_live_51LBXt1LT4wCyvoHaWUbKvZtyvIa288HC4ERSo6iIFzcFdHML9xvpiivLOzvQRKoHTsMktWjT5MVWE5VrPYAv5L9P00JsFKUC3J"
+    >
+    </stripe-buy-button>
 
-    <div class="button-container">
-      <p>帳戶：60328000001789</p>
-      <button onclick="copyToClipboard('60328000001789')">複製帳戶</button>
-    </div>
+    <stripe-buy-button
+      buy-button-id="buy_btn_1N5LwNLT4wCyvoHaGkQTMUZE"
+      publishable-key="pk_live_51LBXt1LT4wCyvoHaWUbKvZtyvIa288HC4ERSo6iIFzcFdHML9xvpiivLOzvQRKoHTsMktWjT5MVWE5VrPYAv5L9P00JsFKUC3J"
+    >
+    </stripe-buy-button>
 
-    <div class="image-wrapper">
-      <img src="coffee.jpeg" alt="Your Image" class="round-image">
-    </div>
+    <stripe-buy-button
+      buy-button-id="buy_btn_1N5LxwLT4wCyvoHaZbPnofPV"
+      publishable-key="pk_live_51LBXt1LT4wCyvoHaWUbKvZtyvIa288HC4ERSo6iIFzcFdHML9xvpiivLOzvQRKoHTsMktWjT5MVWE5VrPYAv5L9P00JsFKUC3J"
+    >
+    </stripe-buy-button>
+
     <h1>謝謝你請我喝咖啡 ☕️ ❤️ 😊</h1>
     <h2>@Nami.kk00</h2>
-
-    <script>
-      function copyToClipboard(text) {
-        const input = document.createElement('input');
-        input.value = text;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-        
-        alert('已複製：' + text);
-      }
-    </script>
-
-  </body>
+</body>
 </html>
